@@ -38,11 +38,17 @@ public class playerMove : MonoBehaviour {
     private bool isAttacking = false; // Ajout de la variable d'état d'attaque
     private float attackCooldownTimer = 0f; // Ajout de la variable de timer de cooldown d'attaque
 
+    private int dashCount = 0; // Ajout de la variable pour suivre le nombre de dashs effectués
+    private int maxDashCount = 2; // Nombre maximum de dashs consécutifs autorisés
+
+    public bool doubleJumpUnlocked = true; // Booléen public pour indiquer si le double saut est débloqué
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = GetComponentInChildren<Animator>();
+        extraJumpsValue = extraJumps; // Initialiser extraJumpsValue
     }
 
     void Update()
@@ -65,6 +71,10 @@ public class playerMove : MonoBehaviour {
             isAttacking = false;
             animator.SetBool("isAttacking", false);
             animator.SetBool("isJumpAttacking", false);
+            if (!isGrounded)
+            {
+                animator.SetBool("isJumping", true);
+            }
         }
 
         // Mouvement horizontal
@@ -76,12 +86,18 @@ public class playerMove : MonoBehaviour {
         {
             animator.SetBool("isJumping", false);
         }
+
+        if (isAttacking)
+        {
+            animator.SetBool("isJumping", false);
+        }
         // Gestion du coyote time
         if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
             animator.SetBool("isJumping", false);
-            extraJumpsValue = 0;
+            extraJumpsValue = extraJumps; // Réinitialiser extraJumpsValue lorsque le joueur touche le sol
+            dashCount = 0; // Réinitialiser le compteur de dashs lorsque le joueur touche le sol
         }
         else
         {
@@ -99,14 +115,14 @@ public class playerMove : MonoBehaviour {
         }
 
         // Conditions de saut
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && extraJumpsValue <= extraJumps)
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && (extraJumpsValue > 0 || (doubleJumpUnlocked && extraJumpsValue > 0)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
             createDust();
 
             jumpBufferCounter = 0f;
-            extraJumpsValue++;
+            extraJumpsValue--; // Décrémenter extraJumpsValue à chaque saut
         }
 
         // Permet un saut plus long en maintenant la touche de saut
@@ -118,10 +134,11 @@ public class playerMove : MonoBehaviour {
         }
 
         // Dash lorsque Left Shift est pressé
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && dashCount < maxDashCount)
         {
             isDashing = true;
             dashTime = dashDuration;
+            dashCount++; // Incrémenter le compteur de dashs
             if (isGrounded)
             {
                 animator.SetBool("isDashingGround", true);
