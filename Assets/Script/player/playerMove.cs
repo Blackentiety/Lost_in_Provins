@@ -54,7 +54,7 @@ public class playerMove : MonoBehaviour {
             animator.SetBool("isJumping", false);
         }
         //handle coyote time
-        if (isGrounded || extraJumpsValue < extraJumps)
+        if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
             animator.SetBool("isJumping", false);
@@ -76,7 +76,7 @@ public class playerMove : MonoBehaviour {
         }
 
         //replaced isGrounded and input jump conditions by buffer and coyote time since they are handled from those conditions
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && extraJumpsValue < extraJumps)
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && extraJumpsValue < extraJumps+1)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
