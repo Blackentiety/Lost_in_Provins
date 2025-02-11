@@ -5,6 +5,7 @@ using UnityEngine;
 public class playerMove : MonoBehaviour {
 
     public ParticleSystem dust;
+    public ParticleSystem dashParticle;
 
     public float speed = 5f;
     public float jumpForce = 10f;
@@ -41,14 +42,17 @@ public class playerMove : MonoBehaviour {
     private int dashCount = 0; // Ajout de la variable pour suivre le nombre de dashs effectués
     private int maxDashCount = 2; // Nombre maximum de dashs consécutifs autorisés
 
-    public bool doubleJumpUnlocked = true; // Booléen public pour indiquer si le double saut est débloqué
+    public bool isDoubleJumpUnlocked = true; // Booléen public pour indiquer si le double saut est débloqué$
+    public bool hasDash = false;
 
+    private Vector2 defaultPhysics;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = GetComponentInChildren<Animator>();
         extraJumpsValue = extraJumps; // Initialiser extraJumpsValue
+        defaultPhysics = Physics2D.gravity;
     }
 
     void Update()
@@ -115,7 +119,7 @@ public class playerMove : MonoBehaviour {
         }
 
         // Conditions de saut
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && (extraJumpsValue > 0 || (doubleJumpUnlocked && extraJumpsValue > 0)))
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && (extraJumpsValue > 0 || (isDoubleJumpUnlocked && extraJumpsValue > 0)))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
@@ -128,16 +132,17 @@ public class playerMove : MonoBehaviour {
         // Permet un saut plus long en maintenant la touche de saut
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             animator.SetBool("isJumping", true);
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
 
             coyoteTimeCounter = 0f;
         }
 
         // Dash lorsque Left Shift est pressé
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && dashCount < maxDashCount)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && hasDash && !isDashing && dashCount < maxDashCount)
         {
             isDashing = true;
+            dashParticle.Play();
             dashTime = dashDuration;
             dashCount++; // Incrémenter le compteur de dashs
             if (isGrounded)
@@ -155,7 +160,7 @@ public class playerMove : MonoBehaviour {
             if (dashTime > 0)
             {
                 float dashDirection = facingRight ? 1 : -1;
-                rb.velocity = new Vector2(dashDirection * dashForce, rb.velocity.y);
+                rb.velocity = new Vector2(dashDirection * dashForce, 0);
                 dashTime -= Time.deltaTime;
             }
             else
