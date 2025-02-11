@@ -75,8 +75,13 @@ public class playerMove : MonoBehaviour {
             jumpBufferCounter -= Time.deltaTime;
         }
 
+<<<<<<< Updated upstream
         //replaced isGrounded and input jump conditions by buffer and coyote time since they are handled from those conditions
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && extraJumpsValue < extraJumps)
+=======
+        // Conditions de saut
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && !isAttacking && (extraJumpsValue > 0 || (doubleJumpUnlocked && extraJumpsValue > 0)))
+>>>>>>> Stashed changes
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
