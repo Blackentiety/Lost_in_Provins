@@ -18,14 +18,8 @@ public class dashUnlock : MonoBehaviour
     // Update is called once per frame
     void OnTriggerEnter2D(Collider2D col)
     {
-        Invoke("kill", 1.0f);
-        player.hasDash = true;
-        glint.SetActive(false);
-        collect.Play();
-    }
-
-    void kill()
-    {
         gameObject.SetActive(false);
+        player.hasDash = true;
+        collect.Play();
     }
 }

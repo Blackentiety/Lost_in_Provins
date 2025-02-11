@@ -10707,7 +10707,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveX: 0
   cameraMoveY: 0
-  playerMoveX: -1.5
+  playerMoveX: -1.2
   playerMoveY: 0
 --- !u!61 &643813588
 BoxCollider2D:
@@ -10741,7 +10741,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4, y: 2.63}
+  m_Offset: {x: -0.66, y: 2.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -10752,7 +10752,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 14.08}
+  m_Size: {x: 0.04, y: 14.08}
   m_EdgeRadius: 0
 --- !u!1 &645589915
 GameObject:
@@ -10969,7 +10969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveX: 25
   cameraMoveY: 0
-  playerMoveX: 1.5
+  playerMoveX: 1.2
   playerMoveY: 0
 --- !u!61 &709666377
 BoxCollider2D:
@@ -11003,7 +11003,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.4, y: 2.63}
+  m_Offset: {x: -0.3, y: 2.63}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11014,7 +11014,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 14.08}
+  m_Size: {x: 0.04, y: 14.08}
   m_EdgeRadius: 0
 --- !u!1 &776055359
 GameObject:
@@ -11131,7 +11131,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2141041879}
   - {fileID: 95495940}
   - {fileID: 459625131}
   m_Father: {fileID: 0}
@@ -16241,7 +16240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveX: 0
   cameraMoveY: 0
-  playerMoveX: 1.5
+  playerMoveX: 1.2
   playerMoveY: 0
 --- !u!61 &1169794755
 BoxCollider2D:
@@ -16275,7 +16274,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: 0.2, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16286,7 +16285,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 9.7}
+  m_Size: {x: 0.04, y: 9.7}
   m_EdgeRadius: 0
 --- !u!1 &1208905028
 GameObject:
@@ -16555,7 +16554,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.1}
+  m_Offset: {x: -0.12, y: -0.1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -16566,7 +16565,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.08, y: 9.7}
+  m_Size: {x: 0.04, y: 9.7}
   m_EdgeRadius: 0
 --- !u!4 &1319004695
 Transform:
@@ -16597,7 +16596,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraMoveX: -25
   cameraMoveY: 0
-  playerMoveX: -1.5
+  playerMoveX: -1.2
   playerMoveY: 0
 --- !u!1 &1348233885
 GameObject:
@@ -17325,8 +17324,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1116055129}
     - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: Jumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: speed
       value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: hasDash
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: dashForce
@@ -17335,6 +17342,10 @@ PrefabInstance:
     - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: jumpForce
       value: 10.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: extraJumps
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3743631820270498866, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: dashDuration
@@ -39376,11 +39387,11 @@ Transform:
   m_GameObject: {fileID: 2141041878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.03, y: 0.47, z: 0.027755838}
+  m_LocalPosition: {x: -32.47, y: 2.7699997, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 887983715}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &2141041880
 ParticleSystemRenderer:
@@ -44192,3 +44203,4 @@ SceneRoots:
   - {fileID: 887983715}
   - {fileID: 1542859706}
   - {fileID: 2038467745}
+  - {fileID: 2141041879}

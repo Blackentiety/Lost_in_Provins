@@ -11,7 +11,7 @@ public class playerMove : MonoBehaviour {
     public float jumpForce = 10f;
     public float dashForce = 10f;
     public float dashDuration = 0.5f;
-    public int extraJumps = 1;
+    public int Jumps = 2;
     
     public float attackCooldown = 0.5f; // Ajout de la variable de cooldown d'attaque
 
@@ -28,7 +28,7 @@ public class playerMove : MonoBehaviour {
 
     public float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
-    private int extraJumpsValue;
+    private int JumpsValue;
 
     private bool isGrounded;
     private bool facingRight = true;
@@ -51,7 +51,7 @@ public class playerMove : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = GetComponentInChildren<Animator>();
-        extraJumpsValue = extraJumps; // Initialiser extraJumpsValue
+        JumpsValue = Jumps; // Initialiser JumpsValue
         defaultPhysics = Physics2D.gravity;
     }
 
@@ -100,7 +100,7 @@ public class playerMove : MonoBehaviour {
         {
             coyoteTimeCounter = coyoteTime;
             animator.SetBool("isJumping", false);
-            extraJumpsValue = extraJumps; // Réinitialiser extraJumpsValue lorsque le joueur touche le sol
+            JumpsValue = Jumps; // Réinitialiser JumpsValue lorsque le joueur touche le sol
             dashCount = 0; // Réinitialiser le compteur de dashs lorsque le joueur touche le sol
         }
         else
@@ -117,16 +117,16 @@ public class playerMove : MonoBehaviour {
         {
             jumpBufferCounter -= Time.deltaTime;
         }
-
+            
         // Conditions de saut
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && (extraJumpsValue > 0 || (isDoubleJumpUnlocked && extraJumpsValue > 0)))
+        if (jumpBufferCounter > 0f && !isDashing && JumpsValue > 0 && (coyoteTimeCounter > 0f || isDoubleJumpUnlocked))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
             createDust();
 
             jumpBufferCounter = 0f;
-            extraJumpsValue--; // Décrémenter extraJumpsValue à chaque saut
+            JumpsValue--; // Décrémenter JumpsValue à chaque saut
         }
 
         // Permet un saut plus long en maintenant la touche de saut
