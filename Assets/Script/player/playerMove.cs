@@ -12,6 +12,7 @@ public class playerMove : MonoBehaviour {
     public float dashDuration = 0.5f;
     public int extraJumps = 1;
     
+    public float attackCooldown = 0.5f; // Ajout de la variable de cooldown d'attaque
 
     public Transform groundCheck;
     public LayerMask groundLayer;
@@ -34,17 +35,49 @@ public class playerMove : MonoBehaviour {
     private float dashTime;
     private bool isDashing;
 
+    private bool isAttacking = false; // Ajout de la variable d'état d'attaque
+    private float attackCooldownTimer = 0f; // Ajout de la variable de timer de cooldown d'attaque
+
+    private int dashCount = 0; // Ajout de la variable pour suivre le nombre de dashs effectués
+    private int maxDashCount = 2; // Nombre maximum de dashs consécutifs autorisés
+
+    public bool doubleJumpUnlocked = true; // Booléen public pour indiquer si le double saut est débloqué
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
         animator = GetComponentInChildren<Animator>();
+        extraJumpsValue = extraJumps; // Initialiser extraJumpsValue
     }
 
     void Update()
     {
+        // Gestion du cooldown d'attaque
+        if (attackCooldownTimer > 0)
+        {
+            attackCooldownTimer -= Time.deltaTime;
+        }
 
-        //horizontal movement
+        // Déclenchement de l'attaque
+        if (Input.GetButtonDown("Fire1") && attackCooldownTimer <= 0)
+        {
+            Attack();
+        }
+
+        // Réinitialisation de l'animation d'attaque après le cooldown
+        if (attackCooldownTimer <= 0 && isAttacking)
+        {
+            isAttacking = false;
+            animator.SetBool("isAttacking", false);
+            animator.SetBool("isJumpAttacking", false);
+            if (!isGrounded)
+            {
+                animator.SetBool("isJumping", true);
+            }
+        }
+
+        // Mouvement horizontal
         float moveH = Input.GetAxis("Horizontal");
         isGrounded = Physics2D.IsTouchingLayers(groundCol, groundLayer);
         rb.velocity = new Vector2(moveH * speed, rb.velocity.y);
@@ -53,19 +86,25 @@ public class playerMove : MonoBehaviour {
         {
             animator.SetBool("isJumping", false);
         }
-        //handle coyote time
-        if (isGrounded || extraJumpsValue < extraJumps)
+
+        if (isAttacking)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        // Gestion du coyote time
+        if (isGrounded)
         {
             coyoteTimeCounter = coyoteTime;
             animator.SetBool("isJumping", false);
-            extraJumpsValue = 0;
+            extraJumpsValue = extraJumps; // Réinitialiser extraJumpsValue lorsque le joueur touche le sol
+            dashCount = 0; // Réinitialiser le compteur de dashs lorsque le joueur touche le sol
         }
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
 
-        //handle jump buffer
+        // Gestion du jump buffer
         if (Input.GetButtonDown("Jump"))
         {
             jumpBufferCounter = jumpBufferTime;
@@ -75,23 +114,20 @@ public class playerMove : MonoBehaviour {
             jumpBufferCounter -= Time.deltaTime;
         }
 
-<<<<<<< Updated upstream
-        //replaced isGrounded and input jump conditions by buffer and coyote time since they are handled from those conditions
-        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && extraJumpsValue < extraJumps)
-=======
+
         // Conditions de saut
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && !isAttacking && (extraJumpsValue > 0 || (doubleJumpUnlocked && extraJumpsValue > 0)))
->>>>>>> Stashed changes
+
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
             createDust();
 
             jumpBufferCounter = 0f;
-            extraJumpsValue++;
+            extraJumpsValue--; // Décrémenter extraJumpsValue à chaque saut
         }
 
-        //allows for longer jump while holding down the jump key
+        // Permet un saut plus long en maintenant la touche de saut
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
@@ -99,11 +135,12 @@ public class playerMove : MonoBehaviour {
             coyoteTimeCounter = 0f;
         }
 
-        // Dash when Left Shift is pressed
-        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing)
+        // Dash lorsque Left Shift est pressé
+        if (Input.GetKeyDown(KeyCode.LeftShift) && !isDashing && dashCount < maxDashCount)
         {
             isDashing = true;
             dashTime = dashDuration;
+            dashCount++; // Incrémenter le compteur de dashs
             if (isGrounded)
             {
                 animator.SetBool("isDashingGround", true);
@@ -130,8 +167,8 @@ public class playerMove : MonoBehaviour {
             }
         }
 
-        // Flip the player if the player is moving in the opposite direction
-        if (moveH > 0 && !facingRight && !isDashing)
+        // Retourner le joueur si il se déplace dans la direction opposée
+        if (moveH > 0 && !facingRight && !isDashing && !isAttacking)
         {
             Flip();
             if (coyoteTimeCounter > 0f)
@@ -139,7 +176,7 @@ public class playerMove : MonoBehaviour {
                 createDust();
             }
         }
-        else if (moveH < 0 && facingRight && !isDashing)
+        else if (moveH < 0 && facingRight && !isDashing && !isAttacking)
         {
             Flip();
             if (coyoteTimeCounter > 0f)
@@ -148,13 +185,13 @@ public class playerMove : MonoBehaviour {
             }
         }
 
-        if (moveH == 0 || isDashing) {
+        if (moveH == 0 || isDashing || isAttacking || !isGrounded) {
             animator.SetBool("isWalking", false);
         }else{
             animator.SetBool("isWalking", true);
         }
 
-        // Ensure dash animation stops when dashing ends
+        // Assurez-vous que l'animation de dash s'arrête lorsque le dash se termine
         if (!isDashing)
         {
             animator.SetBool("isDashingGround", false);
@@ -162,7 +199,7 @@ public class playerMove : MonoBehaviour {
         }
     }
 
-    // Function to flip the player
+    // Fonction pour retourner le joueur
     private void Flip()
     {
         facingRight = !facingRight;
@@ -174,5 +211,21 @@ public class playerMove : MonoBehaviour {
     void createDust()
     {
         dust.Play();
+    }
+
+    void Attack()
+    {
+        if (isAttacking) return; // Empêche l'exécution multiple de l'attaque
+
+        isAttacking = true;
+        attackCooldownTimer = attackCooldown;
+        if (isGrounded)
+        {
+            animator.SetBool("isAttacking", true);
+        }
+        else
+        {
+            animator.SetBool("isJumpAttacking", true);
+        }
     }
 }
