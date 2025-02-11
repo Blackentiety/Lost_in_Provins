@@ -111,8 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 223b348354e5ce24f9521098345fdc7e
       internalID: 1976084415
+=======
+      spriteID: 6f943bc9c16968d49b5746aa094f11f9
+      internalID: -1479534217
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -132,8 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 3a977f5fd2293b14787d5bd5d1de6e33
       internalID: -143386692
+=======
+      spriteID: cbd7ff87266785c4d969dc74d68bf56b
+      internalID: -1284292382
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -153,8 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 1f3ef7b7476611c4a81dbb07f2b50060
       internalID: -144342372
+=======
+      spriteID: cc8caef4851600140a51b017304aa2a6
+      internalID: -1261753465
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -174,8 +189,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: adf16e5e1be8ff04cb7e239824c5fbbf
       internalID: 3376893
+=======
+      spriteID: add19d27ae5fc99479410393c91468bf
+      internalID: -934616865
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -195,8 +215,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: dbc1f3cbe4f5f8d42be04dfab074cb91
       internalID: 1651151630
+=======
+      spriteID: 3acd241bddbaf344bbed3724ad6cb064
+      internalID: 1395687567
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -216,8 +241,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: f64a52765e357804bb388c7f0fdcf8f8
       internalID: -1693966271
+=======
+      spriteID: 0fec789ceb5635e478bffe1718b1afc4
+      internalID: -1374994948
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -237,8 +267,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 30d244db899288544a746940cb83c99d
       internalID: -358607593
+=======
+      spriteID: 3e62517bb82be6247ac9c6acbdac9383
+      internalID: -2111157212
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -258,8 +293,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: b42bf236f05055c4082cceb69cfd90e2
       internalID: 333731337
+=======
+      spriteID: f500bb79581366c408671d8d6c3df995
+      internalID: -950617344
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -275,6 +315,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       Run_0: 1976084415
       Run_1: -143386692
       Run_2: -144342372
@@ -283,6 +324,16 @@ TextureImporter:
       Run_5: -1693966271
       Run_6: -358607593
       Run_7: 333731337
+=======
+      Run_0: -1479534217
+      Run_1: -1284292382
+      Run_2: -1261753465
+      Run_3: -934616865
+      Run_4: 1395687567
+      Run_5: -1374994948
+      Run_6: -2111157212
+      Run_7: -950617344
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

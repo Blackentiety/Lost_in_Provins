@@ -111,8 +111,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 678abe0b1cdba2140bef0118136c5b10
       internalID: -1166949226
+=======
+      spriteID: 95b613f372525934283a32191ea27fb6
+      internalID: -2105796807
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -132,8 +137,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: e62989c4ff8c70d488d0767dd11e26a7
       internalID: 964564516
+=======
+      spriteID: 276cb9a7c69804749a6167fbd88efac6
+      internalID: -1272631786
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -153,8 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
+<<<<<<< Updated upstream
       spriteID: 97b479a17602be745b0af320a0dc8622
       internalID: 774836009
+=======
+      spriteID: f68d9e00fc289784cbbd8713b00bc3c6
+      internalID: 1683182411
+>>>>>>> Stashed changes
       vertices: []
       indices: 
       edges: []
@@ -170,9 +185,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+<<<<<<< Updated upstream
       Hurt_0: -1166949226
       Hurt_1: 964564516
       Hurt_2: 774836009
+=======
+      Hurt_0: -2105796807
+      Hurt_1: -1272631786
+      Hurt_2: 1683182411
+>>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
