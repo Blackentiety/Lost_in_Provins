@@ -915,7 +915,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 604758216}
-  - component: {fileID: 604758215}
   - component: {fileID: 604758217}
   m_Layer: 0
   m_Name: PauseMenuManager
@@ -924,18 +923,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &604758215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604758214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e500293dbb3e7a47a180b77c8085359, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &604758216
 Transform:
   m_ObjectHideFlags: 0
@@ -974,7 +961,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 649889715}
-  - component: {fileID: 649889714}
   - component: {fileID: 649889716}
   m_Layer: 0
   m_Name: SettingsMenuManager
@@ -983,18 +969,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &649889714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 649889713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d26f4f5fd7b29dc44a2e80b3b5c2bed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &649889715
 Transform:
   m_ObjectHideFlags: 0
@@ -1236,7 +1210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
-  gameOverManager: {fileID: 668181249}
+  gameOverManager: {fileID: 0}
 --- !u!61 &724571351
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3998,7 +3972,7 @@ PrefabInstance:
     - target: {fileID: 296971550998414503, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: gameOverManager
       value: 
-      objectReference: {fileID: 668181249}
+      objectReference: {fileID: 0}
     - target: {fileID: 7936824185729004537, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: m_Name
       value: Player
