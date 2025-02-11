@@ -111,65 +111,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-<<<<<<< Updated upstream
-      spriteID: 867db6500fef7ec43a1346c0efbec6c1
-      internalID: 1022363841
-=======
-      spriteID: 2b39d9c59a17979418784ff60bbb3cf4
-      internalID: -668190146
->>>>>>> Stashed changes
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_2_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< Updated upstream
-      spriteID: b3a628d8733e2344c8f3608d17c405d3
-      internalID: 826799525
-=======
-      spriteID: 5b48c19ecd3a1d7419cee5c3eeb735a8
-      internalID: -1995968426
->>>>>>> Stashed changes
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack_2_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-<<<<<<< Updated upstream
-      spriteID: 687721a529c17c54bac0b9bfe63e72bd
-      internalID: 1045248437
-=======
-      spriteID: 6b539571bb444b648bf23dddcdd243e6
-      internalID: 46695929
->>>>>>> Stashed changes
+      spriteID: c5b1fc765366164f0800000000000000
+      internalID: -837275676153275556
       vertices: []
       indices: 
       edges: []
@@ -177,7 +120,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -185,15 +128,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-<<<<<<< Updated upstream
-      Attack_2_0: 1022363841
-      Attack_2_1: 826799525
-      Attack_2_2: 1045248437
-=======
-      Attack_2_0: -668190146
-      Attack_2_1: -1995968426
-      Attack_2_2: 46695929
->>>>>>> Stashed changes
+      Attack_2_0: -837275676153275556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
