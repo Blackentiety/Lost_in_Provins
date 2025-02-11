@@ -112,11 +112,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: 8f43b58f136074b4d9cc3afd4d02d8aa
       internalID: -1867624900
 =======
       spriteID: 6553bc33e7307924ab086f1b7b2ec85b
       internalID: 1060421861
+>>>>>>> Stashed changes
+=======
+      spriteID: e273227597bd104498f42a6056d0468f
+      internalID: -219471097
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -138,11 +143,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: ebf2b3a30e6204c42a57cb72f74bbb71
       internalID: -2033221053
 =======
       spriteID: 3b97a995a329f0e4f977360e293f221c
       internalID: -1705041588
+>>>>>>> Stashed changes
+=======
+      spriteID: 47bffa11dbf340d4a8b2e996f621eb80
+      internalID: 610486188
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -164,11 +174,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: d7dd0cdb4494157409d46fb181c74ed1
       internalID: -1147930547
 =======
       spriteID: 33db5b1923c1aeb459a2772fc7b690eb
       internalID: 1848159768
+>>>>>>> Stashed changes
+=======
+      spriteID: 52c2b9408d1cf734c85bec59ec875a9b
+      internalID: 841274651
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -190,11 +205,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: ddd1691fc5fe6ba47bc05bb0cd25ef77
       internalID: 538638658
 =======
       spriteID: ee38693dc3a7c754583dbe6aa7550970
       internalID: -480436351
+>>>>>>> Stashed changes
+=======
+      spriteID: 7f868b81f0cf66241a3bcbe914e3628f
+      internalID: -726295728
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -216,11 +236,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: 94a927dd7768a994580f6b7964f2c67c
       internalID: 1408707477
 =======
       spriteID: d1891a3a1f436194f99848edb2bd645b
       internalID: -794244320
+>>>>>>> Stashed changes
+=======
+      spriteID: 69dfceab7b9fa9049a309baa16c76dbd
+      internalID: 1653382509
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -242,11 +267,16 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       spriteID: ccf3e4cef6349bf4689107bf49a50191
       internalID: -300642231
 =======
       spriteID: 82a7ff1bf69535845908bb63eaa21d78
       internalID: 1454522872
+>>>>>>> Stashed changes
+=======
+      spriteID: 87fe7f8d5834f904bac137a6907562a5
+      internalID: -1511607901
 >>>>>>> Stashed changes
       vertices: []
       indices: 
@@ -264,6 +294,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       Idle_0: -1867624900
       Idle_1: -2033221053
       Idle_2: -1147930547
@@ -277,6 +308,14 @@ TextureImporter:
       Idle_3: -480436351
       Idle_4: -794244320
       Idle_5: 1454522872
+>>>>>>> Stashed changes
+=======
+      Idle_0: -219471097
+      Idle_1: 610486188
+      Idle_2: 841274651
+      Idle_3: -726295728
+      Idle_4: 1653382509
+      Idle_5: -1511607901
 >>>>>>> Stashed changes
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

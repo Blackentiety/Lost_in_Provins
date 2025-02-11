@@ -21,6 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
+<<<<<<< Updated upstream
       value: {fileID: 1060421861, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - time: 0.05
       value: {fileID: -1705041588, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
@@ -32,6 +33,19 @@ AnimationClip:
       value: {fileID: -794244320, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - time: 0.25
       value: {fileID: 1454522872, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
+=======
+      value: {fileID: 21300000, guid: 7dd3b7a3c484f47498d9f796867430ec, type: 3}
+    - time: 0.06666667
+      value: {fileID: 21300000, guid: 8f92cd5a33df99647b6d3c9a910ae332, type: 3}
+    - time: 0.13333334
+      value: {fileID: 21300000, guid: f8f878a7d873fca48b718fd777e9d5bc, type: 3}
+    - time: 0.2
+      value: {fileID: 21300000, guid: 22736ea5c80f6ab43b3790cad062e74e, type: 3}
+    - time: 0.26666668
+      value: {fileID: 21300000, guid: 4607f93bf15ec67419bce0e13dc221ee, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: a5a88b541f2add84f9cf3d8f85419f50, type: 3}
+>>>>>>> Stashed changes
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,18 +68,31 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
+<<<<<<< Updated upstream
     - {fileID: 1060421861, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - {fileID: -1705041588, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - {fileID: 1848159768, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - {fileID: -480436351, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - {fileID: -794244320, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
     - {fileID: 1454522872, guid: 4ca15fb145c4f4b429a0bc7934ffe468, type: 3}
+=======
+    - {fileID: 21300000, guid: 7dd3b7a3c484f47498d9f796867430ec, type: 3}
+    - {fileID: 21300000, guid: 8f92cd5a33df99647b6d3c9a910ae332, type: 3}
+    - {fileID: 21300000, guid: f8f878a7d873fca48b718fd777e9d5bc, type: 3}
+    - {fileID: 21300000, guid: 22736ea5c80f6ab43b3790cad062e74e, type: 3}
+    - {fileID: 21300000, guid: 4607f93bf15ec67419bce0e13dc221ee, type: 3}
+    - {fileID: 21300000, guid: a5a88b541f2add84f9cf3d8f85419f50, type: 3}
+>>>>>>> Stashed changes
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
+<<<<<<< Updated upstream
     m_StopTime: 0.26666668
+=======
+    m_StopTime: 0.35000002
+>>>>>>> Stashed changes
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
