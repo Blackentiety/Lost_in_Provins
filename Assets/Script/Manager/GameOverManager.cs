@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameOverManager : MonoBehaviour
 {
+    public GameObject gameOverPanel;
+
     public void ShowGameOverPanel()
     {
-        gameObject.SetActive(true);
+        gameOverPanel.SetActive(true);
         Time.timeScale = 0f;
     }
 
