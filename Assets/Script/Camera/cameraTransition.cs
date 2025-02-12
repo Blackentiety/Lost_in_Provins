@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class doorTrigger : MonoBehaviour
+public class cameraTrigger : MonoBehaviour
 {
-    public float cameraMoveX;
-    public float cameraMoveY;
-    public float playerMoveX;
+    public float cameraPosX;
+    public float cameraPosY;
+    public float playerMoveX;   
     public float playerMoveY;
     void Start()
     {
@@ -16,7 +16,7 @@ public class doorTrigger : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
             Time.timeScale = 0;
-            Camera.main.transform.position = new Vector3(cameraMoveX, cameraMoveY, -10);
+            Camera.main.transform.position = new Vector3(cameraPosX, cameraPosY, -10);
             GameObject.FindWithTag("Player").transform.Translate(playerMoveX, playerMoveY, 0);
             Time.timeScale = 1;
     }
