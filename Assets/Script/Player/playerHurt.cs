@@ -11,6 +11,7 @@ public class playerHurt : MonoBehaviour
     private bool isDead = false; // Ajout de la variable d'état de mort
 
     private Animator animator;
+    public GameOverManager gameOverManager; // Référence au GameOverManager
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +72,9 @@ public class playerHurt : MonoBehaviour
     {
         yield return new WaitForSeconds(1f); // Attendre 1 secondes avant de désactiver le joueur
         gameObject.SetActive(false); // Désactiver le GameObject du joueur
+        if (gameOverManager != null)
+        {
+            gameOverManager.ShowGameOverPanel(); // Afficher le Game Over Manager
+        }
     }
 }
