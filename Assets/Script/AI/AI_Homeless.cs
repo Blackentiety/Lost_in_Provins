@@ -12,6 +12,14 @@ public class AI_Homeless : MonoBehaviour
     private Animator anim;
     private SpriteRenderer sprite;
     private int RandomAnim;
+    private bool isHurt = false; // Ajout de la variable d'état de blessure
+    private bool isDead = false; // Ajout de la variable d'état de mort
+    private bool isAttacking = false; // Ajout de la variable d'état d'attaque
+    public Collider2D attackTrigger;
+    private float attackCooldownTimer = 0f; // Ajout de la variable de timer de cooldown d'attaque
+    private float attackCooldown = 0.5f; // Ajout de la variable de cooldown
+    private bool isFacingRight = true;
+
     
     void Start()
     {
@@ -24,9 +32,16 @@ public class AI_Homeless : MonoBehaviour
 
     void Update()
     {
-        rb.velocity = transform.right * speed * direction;
+        if (attackCooldownTimer > 0)
+        {
+            attackCooldownTimer -= Time.deltaTime;
+        }
+        if (!isHurt && !isDead && !isAttacking)
+        {
+            rb.velocity = transform.right * speed * direction;
+        }
     }
-
+    
     void Gauche()
     {
         anim.SetBool("IsDrinking", false);
@@ -34,7 +49,11 @@ public class AI_Homeless : MonoBehaviour
         direction = -1;
         Invoke("Droite", 4.0f);
         Invoke("Stop", 2.0f);
-        sprite.flipX = true;
+        if (isFacingRight)
+        {
+            Flip();
+            isFacingRight = false;
+        }
     }
     void Droite()
     {
@@ -43,7 +62,12 @@ public class AI_Homeless : MonoBehaviour
         direction = 1;
         Invoke("Gauche", 4.0f);
         Invoke("Stop", 2.0f);
-        sprite.flipX = false;
+        if (!isFacingRight)
+        {
+            Flip();
+            isFacingRight = true;
+        }
+        
     }
 
     void Stop()
@@ -61,5 +85,36 @@ public class AI_Homeless : MonoBehaviour
             anim.SetBool("IsWalking", false);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player") && !isHurt && !isDead && attackCooldownTimer <= 0)
+        {
+            isAttacking = true;
+            StartCoroutine(Attack());
+            Debug.Log("Homeless is attacking");
+            attackCooldownTimer = attackCooldown;
+            Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * 2, ForceMode2D.Impulse);
+            // Ajouter votre logique d'attaque ici
+            other.gameObject.GetComponent<playerHurt>().TakeDamage(1);
+        }
+    }
+    private IEnumerator Attack()
+    {
+        Debug.Log("Homeless is attacking animation");
+        anim.SetBool("isAttacking", true);
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("isAttacking", false);
+        isAttacking = false;
+    }
+
+    void Flip()
+    {
+        Vector3 theScale = transform.localScale;
+        theScale.x *= -1;
+        transform.localScale = theScale;
+    }
+    
 }
 
