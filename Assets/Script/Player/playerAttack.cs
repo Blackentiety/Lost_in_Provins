@@ -40,7 +40,14 @@ public class playerAttack : MonoBehaviour
             Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
             other.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * 2, ForceMode2D.Impulse);
             // Ajouter votre logique d'attaque ici
-            other.gameObject.GetComponent<HomelessHurt>().TakeDamage((int)damage);
+            if (other.gameObject.GetComponent<HomelessHurt>() != null)
+            {
+                other.gameObject.GetComponent<HomelessHurt>().TakeDamage((float)damage);
+            }
+            else if (other.gameObject.GetComponent<BlackKnightHurt>() != null)
+            {
+                other.gameObject.GetComponent<BlackKnightHurt>().TakeDamage((float)damage);
+            }
         }
     }
 }
