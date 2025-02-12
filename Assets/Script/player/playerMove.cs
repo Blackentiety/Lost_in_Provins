@@ -11,7 +11,7 @@ public class playerMove : MonoBehaviour {
     public float jumpForce = 10f;
     public float dashForce = 10f;
     public float dashDuration = 0.5f;
-    public int Jumps = 2;
+    public int Jumps = 1;
     
     public float attackCooldown = 0.5f; // Ajout de la variable de cooldown d'attaque
 
@@ -63,11 +63,13 @@ public class playerMove : MonoBehaviour {
             attackCooldownTimer -= Time.deltaTime;
         }
 
+
         // Déclenchement de l'attaque
         if (Input.GetButtonDown("Fire1") && attackCooldownTimer <= 0)
         {
             Attack();
         }
+
 
         // Réinitialisation de l'animation d'attaque après le cooldown
         if (attackCooldownTimer <= 0 && isAttacking)
@@ -80,6 +82,7 @@ public class playerMove : MonoBehaviour {
                 animator.SetBool("isJumping", true);
             }
         }
+
 
         // Mouvement horizontal
         float moveH = Input.GetAxis("Horizontal");
@@ -95,6 +98,8 @@ public class playerMove : MonoBehaviour {
         {
             animator.SetBool("isJumping", false);
         }
+
+
         // Gestion du coyote time
         if (isGrounded)
         {
@@ -108,6 +113,7 @@ public class playerMove : MonoBehaviour {
             coyoteTimeCounter -= Time.deltaTime;
         }
 
+
         // Gestion du jump buffer
         if (Input.GetButtonDown("Jump"))
         {
@@ -118,15 +124,26 @@ public class playerMove : MonoBehaviour {
             jumpBufferCounter -= Time.deltaTime;
         }
             
+
         // Conditions de saut
-        if (jumpBufferCounter > 0f && !isDashing && JumpsValue > 0 && (coyoteTimeCounter > 0f || isDoubleJumpUnlocked))
+        if (jumpBufferCounter > 0f && !isDashing && coyoteTimeCounter > 0f)
+        {
+            jump();
+        }
+
+        if (jumpBufferCounter > 0f && JumpsValue > 0 && !isDashing && isDoubleJumpUnlocked)
+        {
+            jump();
+            JumpsValue--;
+        }
+
+        void jump()
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
             createDust();
 
             jumpBufferCounter = 0f;
-            JumpsValue--; // Décrémenter JumpsValue à chaque saut
         }
 
         // Permet un saut plus long en maintenant la touche de saut
@@ -134,9 +151,9 @@ public class playerMove : MonoBehaviour {
         {
             animator.SetBool("isJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-
             coyoteTimeCounter = 0f;
         }
+
 
         // Dash lorsque Left Shift est pressé
         if (Input.GetKeyDown(KeyCode.LeftShift) && hasDash && !isDashing && dashCount < maxDashCount)
@@ -171,6 +188,7 @@ public class playerMove : MonoBehaviour {
             }
         }
 
+
         // Retourner le joueur si il se déplace dans la direction opposée
         if (moveH > 0 && !facingRight && !isDashing && !isAttacking)
         {
@@ -195,6 +213,7 @@ public class playerMove : MonoBehaviour {
             animator.SetBool("isWalking", true);
         }
 
+
         // Assurez-vous que l'animation de dash s'arrête lorsque le dash se termine
         if (!isDashing)
         {
@@ -202,6 +221,7 @@ public class playerMove : MonoBehaviour {
             animator.SetBool("isDashingAir", false);
         }
     }
+
 
     // Fonction pour retourner le joueur
     private void Flip()

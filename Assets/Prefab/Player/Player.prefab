@@ -130,11 +130,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dust: {fileID: 0}
   dashParticle: {fileID: 0}
-  speed: 5
-  jumpForce: 10
-  dashForce: 10
-  dashDuration: 0.5
-  Jumps: 2
+  speed: 5.3
+  jumpForce: 10.5
+  dashForce: 11
+  dashDuration: 0.4
+  Jumps: 1
   attackCooldown: 0.5
   groundCheck: {fileID: 0}
   groundLayer:
