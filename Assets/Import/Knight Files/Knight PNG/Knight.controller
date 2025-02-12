@@ -377,6 +377,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: isHurt
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   - m_Name: isDead
     m_Type: 4
     m_DefaultFloat: 0
@@ -389,6 +395,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -659,6 +666,10 @@ AnimatorStateMachine:
   - {fileID: 130074437526984986}
   - {fileID: 7387741776371557923}
   - {fileID: -3660515268307808168}
+  - {fileID: -5224323923806227645}
+  - {fileID: -5393076047232211734}
+  - {fileID: -706159682736211326}
+  - {fileID: 130074437526984986}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []

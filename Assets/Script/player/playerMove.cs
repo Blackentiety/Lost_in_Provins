@@ -117,9 +117,11 @@ public class playerMove : MonoBehaviour {
         {
             jumpBufferCounter -= Time.deltaTime;
         }
-            
+
+
         // Conditions de saut
-        if (jumpBufferCounter > 0f && !isDashing && JumpsValue > 0 && (coyoteTimeCounter > 0f || isDoubleJumpUnlocked))
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f && !isDashing && !isAttacking && (extraJumpsValue > 0 || (doubleJumpUnlocked && extraJumpsValue > 0)))
+
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             animator.SetBool("isJumping", true);
