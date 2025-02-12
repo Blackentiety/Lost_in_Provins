@@ -7,10 +7,11 @@ public class PauseMenuManager : MonoBehaviour
 {   
     public GameObject pauseMenu;
     public GameObject settingsMenu;
+    public GameObject GameOverMenu;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)&& !settingsMenu.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape)&& !settingsMenu.activeSelf && !GameOverMenu.activeSelf)
         {
             if (pauseMenu.activeSelf)
             {
