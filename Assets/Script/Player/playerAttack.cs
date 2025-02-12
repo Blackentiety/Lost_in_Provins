@@ -38,9 +38,9 @@ public class playerAttack : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy") && isAttacking)
         {   
             Vector2 knockbackDirection = (other.transform.position - transform.position).normalized;
-            other.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * 10, ForceMode2D.Impulse);
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(knockbackDirection * 2, ForceMode2D.Impulse);
             // Ajouter votre logique d'attaque ici
-            other.gameObject.GetComponent<playerHurt>().TakeDamage(damage);
+            other.gameObject.GetComponent<HomelessHurt>().TakeDamage((int)damage);
         }
     }
 }
