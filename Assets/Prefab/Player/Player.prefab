@@ -52,11 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dust: {fileID: 0}
-  speed: 5
-  jumpForce: 10
-  dashForce: 10
-  dashDuration: 0.5
-  extraJumps: 1
+  dashParticle: {fileID: 0}
+  speed: 5.3
+  jumpForce: 10.5
+  dashForce: 11
+  dashDuration: 0.4
+  Jumps: 1
   attackCooldown: 0.5
   groundCheck: {fileID: 0}
   groundLayer:
@@ -65,7 +66,8 @@ MonoBehaviour:
   groundCol: {fileID: 1400798976285920624}
   coyoteTime: 0.2
   jumpBufferTime: 0.2
-  doubleJumpUnlocked: 1
+  isDoubleJumpUnlocked: 1
+  hasDash: 0
 --- !u!61 &6980462688944083129
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -256,6 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 3
+  gameOverManager: {fileID: 0}
 --- !u!1001 &1871247022523686375
 PrefabInstance:
   m_ObjectHideFlags: 0
