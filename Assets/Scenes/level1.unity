@@ -19068,6 +19068,10 @@ PrefabInstance:
       propertyPath: gameOverManager
       value: 
       objectReference: {fileID: 1753096872}
+    - target: {fileID: 1400798976285920624, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2028198716214558379, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -19115,6 +19119,18 @@ PrefabInstance:
     - target: {fileID: 4480541976649625034, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980462688944083129, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: m_Size.y
+      value: 0.7848654
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980462688944083129, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.049999997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6980462688944083129, guid: 557f66fa9497827428840562672136fb, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.7624327
       objectReference: {fileID: 0}
     - target: {fileID: 7936824185729004537, guid: 557f66fa9497827428840562672136fb, type: 3}
       propertyPath: m_Name
