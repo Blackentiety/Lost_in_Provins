@@ -9,14 +9,16 @@ public class playerHurt : MonoBehaviour
     private float hurtDuration = 1f; // Durée de l'état de blessure
     private float hurtTimer = 0f; // Timer de l'état de blessure
     private bool isDead = false; // Ajout de la variable d'état de mort
-
+    private Rigidbody2D rb; // Référence au Rigidbody2D du joueur
     private Animator animator;
+    public GameObject PlayerMove; // Référence au script PlayerMove
     public GameOverManager gameOverManager; // Référence au GameOverManager
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -70,11 +72,28 @@ public class playerHurt : MonoBehaviour
 
     private IEnumerator HandleDeath()
     {
-        yield return new WaitForSeconds(1f); // Attendre 1 secondes avant de désactiver le joueur
-        gameObject.SetActive(false); // Désactiver le GameObject du joueur
-        if (gameOverManager != null)
+         // Disable player movement components
+        var playerRigidbody = rb;
+        if (playerRigidbody != null)
         {
-            gameOverManager.ShowGameOverPanel(); // Afficher le Game Over Manager
+            playerRigidbody.velocity = Vector2.zero;
+            playerRigidbody.isKinematic = true;
         }
+
+        var playerMovement = PlayerMove.GetComponent<playerMove>(); // Assuming you have a PlayerMovement script
+        if (playerMovement != null)
+        {
+            playerMovement.enabled = false;
+        }
+
+        // Wait for the death animation to finish (assuming it takes 3 seconds)
+        yield return new WaitForSeconds(0.8f);
+        gameObject.SetActive(false);
+
+        // Show game over panel
+        gameOverManager.ShowGameOverPanel();
+
+        // Pause the game
+        Time.timeScale = 0f;
     }
 }
