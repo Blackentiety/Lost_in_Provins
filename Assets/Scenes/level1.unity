@@ -39709,6 +39709,10 @@ PrefabInstance:
       propertyPath: gameOverPanel
       value: 
       objectReference: {fileID: 1197348058}
+    - target: {fileID: 2335606989577379535, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_text
+      value: Le glas a sonne
+      objectReference: {fileID: 0}
     - target: {fileID: 4360216066761736215, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30.240324
@@ -39755,6 +39759,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6573495247519027098, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.83035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.83035
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.83035
+      objectReference: {fileID: 0}
+    - target: {fileID: 9024127965432405941, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -44245,6 +44265,10 @@ PrefabInstance:
       propertyPath: settingsMenu
       value: 
       objectReference: {fileID: 1367192792}
+    - target: {fileID: 3950973836367384069, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4842434339397702300, guid: 091c6867cef68af43bfba22f99331857, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
