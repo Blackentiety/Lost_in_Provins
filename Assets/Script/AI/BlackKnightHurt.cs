@@ -40,6 +40,10 @@ public class BlackKnightHurt : MonoBehaviour
             isDead = true;
             attackTrigger.enabled = false; // Désactiver le collider de l'attaque lorsque le Homeless est mort
         }
+        if (isDead)
+        {
+            StartCoroutine(Die());
+        }
     }
 
 
@@ -56,7 +60,6 @@ public class BlackKnightHurt : MonoBehaviour
 			} 
         else {
             enemyAnimator.SetTrigger ("death");
-            gameObject.SetActive(false);
             
         }
 	}
@@ -69,6 +72,12 @@ public class BlackKnightHurt : MonoBehaviour
             hurtTimer = hurtDuration;
             AttackStart();
         }
+    }
+
+    public IEnumerator Die()
+    {
+        yield return new WaitForSeconds(0.8f);
+        enemy.SetActive(false);
     }
 
 }
