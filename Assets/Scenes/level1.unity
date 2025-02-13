@@ -11301,7 +11301,7 @@ RectTransform:
   m_GameObject: {fileID: 601903581}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.66, y: 1.66, z: 1.66}
+  m_LocalScale: {x: 3.8080397, y: 3.8080397, z: 3.8080397}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1367192795}
@@ -11614,7 +11614,7 @@ RectTransform:
   m_GameObject: {fileID: 647978820}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.7542, y: 1.7542, z: 1.7542}
+  m_LocalScale: {x: 4.7, y: 4.7, z: 4.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1432042700}
@@ -11622,7 +11622,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: -175}
+  m_AnchoredPosition: {x: -0.000030518, y: -366}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &647978822
@@ -18813,10 +18813,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -18873,7 +18873,7 @@ RectTransform:
   m_GameObject: {fileID: 1414594005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.66, y: 1.66, z: 1.66}
+  m_LocalScale: {x: 4.7, y: 4.7, z: 4.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2000723691}
@@ -18883,7 +18883,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 13.9}
+  m_AnchoredPosition: {x: 0, y: -88}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414594007
@@ -39705,6 +39705,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameOverMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 1374053116909839351, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493332981260844036, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493332981260844036, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493332981260844036, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1493332981260844036, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -132
+      objectReference: {fileID: 0}
     - target: {fileID: 2235229611856669124, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: gameOverPanel
       value: 
@@ -39712,6 +39732,22 @@ PrefabInstance:
     - target: {fileID: 2335606989577379535, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_text
       value: Le glas a sonne
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899919601107908508, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899919601107908508, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899919601107908508, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3899919601107908508, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 82
       objectReference: {fileID: 0}
     - target: {fileID: 4360216066761736215, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -39761,21 +39797,37 @@ PrefabInstance:
       propertyPath: m_Interactable
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7138015707308866154, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138015707308866154, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 7138015707308866154, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.83035
+      value: 0.70621127
       objectReference: {fileID: 0}
     - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.83035
+      value: 0.70621127
       objectReference: {fileID: 0}
     - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.83035
+      value: 0.70621127
+      objectReference: {fileID: 0}
+    - target: {fileID: 8129505233659688152, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 386
       objectReference: {fileID: 0}
     - target: {fileID: 9024127965432405941, guid: 30dccc3140dd5724d94347d2cb35219e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -40088,14 +40140,14 @@ RectTransform:
   m_GameObject: {fileID: 1978834967}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3.0395396, y: 3.0395396, z: 3.0395396}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1367192795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000030518, y: 159}
+  m_AnchoredPosition: {x: -0.000030518, y: 350}
   m_SizeDelta: {x: 517.6, y: 78.563}
   m_Pivot: {x: 0.49999994, y: 0.5}
 --- !u!114 &1978834969
@@ -44257,6 +44309,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 967381817158950134, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 967381817158950134, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 967381817158950134, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 2256284290607053025, guid: 091c6867cef68af43bfba22f99331857, type: 3}
       propertyPath: GameOverMenu
       value: 
@@ -44267,6 +44331,18 @@ PrefabInstance:
       objectReference: {fileID: 1367192792}
     - target: {fileID: 3950973836367384069, guid: 091c6867cef68af43bfba22f99331857, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823017753281233613, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_fontSize
+      value: 18.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823017753281233613, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 18.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 4823017753281233613, guid: 091c6867cef68af43bfba22f99331857, type: 3}
+      propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4842434339397702300, guid: 091c6867cef68af43bfba22f99331857, type: 3}
